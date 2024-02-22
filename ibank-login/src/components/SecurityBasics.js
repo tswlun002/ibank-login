@@ -11,23 +11,26 @@ export default function SecurityBasics({ handleClose, open }) {
         return (
             <Grid container spacing={0}>
                 <Grid item xs={12}>
-                    <Header />
+                    <Header  navItems={<Typography variant='h6' color={COLORS.default}>Security Basics</Typography>}/>
                 </Grid>
                 <Grid item xs={12} display={"flex"} flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
-                    <Image image={certificate} alt={"SSL certificate "} customStyle={{ width: "6%" }} />
-                    <Typography variant='h6' color={COLORS.default}>Security Basics</Typography>
                 </Grid>
+                <Grid item xs={12} display={"flex"} flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
+                <Image image={certificate} alt={"SSL certificate "} customStyle={{ width: "20%" }} />
+                </Grid>
+      
             </Grid>
 
         )
     }
+   
     return (
         <Modal open={open} onClose={() => handleClose()} >
 
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height:"100vh" }}>
 
                 <Card >
-                    <CardHeader title={<Title />} />
+                    <CardHeader title={<Title />}  />
                     <CardContent>
                         <List>{securityBasics}</List>
                     </CardContent>
