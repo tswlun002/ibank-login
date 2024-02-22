@@ -11,7 +11,7 @@ export default function SecurityBasics({ handleClose, open }) {
         return (
             <Grid container spacing={0}>
                 <Grid item xs={12}>
-                    <Header  navItems={<Typography variant='h6' color={COLORS.default}>Security Basics</Typography>}/>
+                    <Header  navItems={<Typography variant='subtitle1' color={COLORS.default}>Security Basics</Typography>}/>
                 </Grid>
                 <Grid item xs={12} display={"flex"} flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
                 </Grid>
