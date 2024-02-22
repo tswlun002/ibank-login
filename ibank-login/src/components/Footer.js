@@ -26,6 +26,7 @@ export default function Footer() {
                         ? theme.palette.grey[200]
                         : theme.palette.grey[800],
                 p: 6,
+                flexGrow:1
             }}
         >
             <Container maxWidth="lg">

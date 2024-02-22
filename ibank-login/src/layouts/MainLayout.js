@@ -8,7 +8,7 @@ import { COLORS, MainPhoneNumber } from '../utils/Constants';
 
 const MainLayout =()=>{
      return (
-      <Stack className="App">
+      <Stack  sx={{flexFlow:1, display:"flex", flexDirection:"column", minHeight:"100vh"}}className="App">
         <Header 
             navItems={ [<PhoneInTalkIcon sx={{paddingRight:1}} style={{color:COLORS.primary}}/>,
                     <Typography variant="h6" component="div" color={COLORS.primary} >
