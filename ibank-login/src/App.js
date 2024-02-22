@@ -1,10 +1,12 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
+import MainLayout from './layouts/MainLayout';
+import Login from './pages/Login';
 function App() {
   return (
     <Routes>
-       <Route path='/'>
-        <Route index element={<h1>Hello Capitec Login</h1>}/>
+       <Route path='/' element={<MainLayout/>}>
+        <Route index element={<Login/>}/>
        </Route>
     </Routes>
   );
