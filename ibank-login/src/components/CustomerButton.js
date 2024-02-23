@@ -12,8 +12,8 @@ const ColorButton = styled(Button)(({ theme }) => ({
     },
 }));
 
-export default function CustomizedButtons({label,variant, customStyle,OnClick}) {
+export default function CustomizedButton({label,variant, customStyle,field ,handleInput}) {
     return (
-        <ColorButton onClick={OnClick}  variant={variant} {...customStyle}>{label}</ColorButton>
+        <ColorButton onClick={()=>{handleInput(field,true)}}  variant={variant} {...customStyle}>{label}</ColorButton>
     );
 }

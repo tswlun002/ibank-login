@@ -70,13 +70,13 @@ const customTheme = (outerTheme) =>
     },
   });
 
-export default function CustomizedTextField({ label, customStyle }) {
+export default function CustomizedTextField({ label, customStyle, handleInput,field }) {
   const outerTheme = useTheme();
 
   return (
 
     <ThemeProvider theme={customTheme(outerTheme)}>
-      <TextField label={label} {...customStyle} />
+      <TextField onChange={(e)=>handleInput(field,e.target.value)} label={label} {...customStyle} />
     </ThemeProvider>
   );
 }
