@@ -6,6 +6,7 @@ import certificate from "../images/SSL-certificate.webp"
 import Image from './Image';
 import CustomizedButtons from './CustomerButton';
 export default function SecurityBasics({ handleClose, open }) {
+    const handleClose1 =(field, value)=>handleClose()
     const securityBasics = SecurityBasicsData.map((value, index) => <ListItem key={index+1}>{`${index+1}. ${value}`}</ListItem>)
     const Title = () => {
         return (
@@ -41,7 +42,7 @@ export default function SecurityBasics({ handleClose, open }) {
                             alignItems="baseline"
                             spacing={2}
                             padding={2}>
-                        <CustomizedButtons OnClick={handleClose} label={"Done"} variant={"outlined"} customStyle={{ size: "large" }} />
+                        <CustomizedButtons field={"close"} handleInput={handleClose1} label={"Done"} variant={"outlined"} customStyle={{ size: "large" }} />
                     </Stack>
                    
                 </Card>
