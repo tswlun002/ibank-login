@@ -17,7 +17,6 @@ const Login = () => {
     const [formState, dispatchForm] = useReducer((state, action)=>{return {...state , ...action}}, INITI_STATE);
     const [qrOpen, setOpenQr] = useState(false);
     const handleInput=(field="",value="")=>{
-        console.log(`My input Log: \n${field} : ${value}'`)
         dispatchForm({[field]:value})
     }
     const handleButton =(field="",value="")=>{
@@ -25,7 +24,6 @@ const Login = () => {
             dispatchForm({isLoginError:true});
         }else{
             const tokenType= (formState.email==='accessfacility1'&&value)?"isSoftToken":(formState.email==='accessfacility2'&&value)?"isHardToken":"none"
-            console.log(`My button Log: \n${field} : ${value} , ${tokenType}`)
             dispatchForm({[field]:value,[tokenType]:true})
         }
 
@@ -36,8 +34,6 @@ const Login = () => {
 
     useEffect(()=>{setOpenQr(true);},[formState.isAccountVerified])
     useEffect(()=>{dispatchForm({...INITI_STATE});},[qrOpen])
-    
-    
     
     const showHidePassword = {
         endAdornment: (
@@ -52,7 +48,7 @@ const Login = () => {
       }
 
     return (
-        <Grid container  direction="row" justifyContent="center" alignItems="start" padding={"2rem"}>    
+        <Grid container  direction="row" justifyContent="center" alignItems="start" padding={"5rem"}>    
             <Grid display={{xs:"none", sm:"flex"}} container sm={6} direction="row" justifyContent="center" alignItems="center"  >
                 <Image image={global} alt={"Global one image"} key={"global-one"} customStyle={{ width: "70%" }} />
             </Grid>
@@ -75,7 +71,7 @@ const Login = () => {
                         <CustomizedTextField handleInput={handleInput} field={'password'} label={"Password/Remote PIN"}
                             customStyle={{ placeholder: "Enter password/remote PIN", fullWidth: true,size:"small",
                                            type:formState.passwordVisible?"text":"password",
-                                            autoComplete:'new-password',required:true,value:formState.password,autoComplete:'new-password',
+                                            required:true,value:formState.password,autoComplete:'new-password',
                                         InputProps:showHidePassword 
                                     }}
                         />
